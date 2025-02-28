@@ -55,7 +55,16 @@ The OpenAI endpoint should be set at `http://localhost:8000/v1`
 This can be configured on the OpenWebUI settings -> Connections -> Add connection 
 (api key can be anything)
 
+#### Docker-specific Configuration
+When running in Docker, you need to use `host.docker.internal` to access services running on your host machine:
 
+```bash
+# To access Ollama running on your host machine
+OLLAMA_HOST_ENDPOINT="http://host.docker.internal:11434/v1"
+
+# To access self-hosted Firecrawl running on your host machine
+FIRECRAWL_BASE_URL="http://host.docker.internal:3002"
+```
 
 ## Configuration
 Open `.env` and replace placeholder values with your actual API keys
